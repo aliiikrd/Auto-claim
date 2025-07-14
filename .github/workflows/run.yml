@@ -1,19 +1,19 @@
 name: 24/7 Faucet Claimer
 
 on:
-‎  # التشغيل عند الدفع إلى الفرع الرئيسي
+  # التشغيل عند الدفع إلى الفرع الرئيسي
   push:
     branches: [ "main" ]
   
-‎  # التشغيل عند السحب إلى الفرع الرئيسي
+  # التشغيل عند السحب إلى الفرع الرئيسي
   pull_request:
     branches: [ "main" ]
   
-‎  # التشغيل حسب الجدولة الزمنية (كل 6 ساعات)
+  # التشغيل حسب الجدولة الزمنية (كل 6 ساعات)
   schedule:
     - cron: '0 */6 * * *'
   
-‎  # السماح بالتشغيل اليدوي
+  # السماح بالتشغيل اليدوي
   workflow_dispatch:
 
 jobs:
@@ -35,6 +35,6 @@ jobs:
       
     - name: Run Faucet Claimer
       env:
-        FAUCET_EMAIL: ${{ Aliiikrdforbus@gmail.com }}
-        FAUCET_PASSWORD: ${{ Zxcvv121221122&& }}
+        FAUCET_EMAIL: "Aliiikrdforbus@gmail.com"
+        FAUCET_PASSWORD: "Zxcvv121221122&&"
       run: python faucet_claimer.py
