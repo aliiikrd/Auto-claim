@@ -1,9 +1,20 @@
 name: 24/7 Faucet Claimer
 
 on:
-  workflow_dispatch:
+‎  # التشغيل عند الدفع إلى الفرع الرئيسي
+  push:
+    branches: [ "main" ]
+  
+‎  # التشغيل عند السحب إلى الفرع الرئيسي
+  pull_request:
+    branches: [ "main" ]
+  
+‎  # التشغيل حسب الجدولة الزمنية (كل 6 ساعات)
   schedule:
-    - cron: '0 */6 * * *'  # يشغل كل 6 ساعات
+    - cron: '0 */6 * * *'
+  
+‎  # السماح بالتشغيل اليدوي
+  workflow_dispatch:
 
 jobs:
   run-faucet:
